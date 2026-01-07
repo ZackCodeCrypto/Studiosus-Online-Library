@@ -1,0 +1,10 @@
+﻿body { font-family: Arial, sans-serif; margin: 20px; }
+nav a { margin-right: 12px; }
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+.card { border: 1px solid #ddd; padding: 12px; margin: 12px 0; border-radius: 8px; }
+.msg { margin-top: 8px; }
+.msg.ok { color: green; }
+.msg.err { color: darkred; }
+input { margin: 4px; padding: 6px; }
+button { padding: 6px 10px; }

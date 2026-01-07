@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title data-i18n="appName">Studiosus Online Library</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1 data-i18n="appName">Studiosus Online Library</h1>
+<nav>
+    <div style="float:right;">
+        <button id="langEn">EN</button>
+        <button id="langPl">PL</button>
+    </div>
+    <a href="/books.html" data-i18n="books">Books</a>
+    <a href="/users.html" data-i18n="users">Users</a>
+    <a href="/loans.html" data-i18n="loans">Loans</a>
+    <a href="/login.html" data-i18n="login">Login</a>
+    <a href="/register.html" data-i18n="register">Register</a>
+    <button id="logoutBtn" style="display:none;" data-i18n="logout">Logout</button>
+    <span id="whoami"></span>
+</nav>
+<section class="card">
+    <h2 data-i18n="welcomeTitle">Hello, welcome to Studiosus Online Library!</h2>
+    <p data-i18n="welcomeText1"></p>
+    <p data-i18n="welcomeText2"></p>
+    <p data-i18n="welcomeText3"></p>
+    <p data-i18n="welcomeText4"></p>
+</section>
+</body>
+<script src="/js/i18n.js"></script>
+<script>
+    document.getElementById("langEn").addEventListener("click", () => {
+        setLang("en");
+        applyI18n();
+    });
+    document.getElementById("langPl").addEventListener("click", () => {
+        setLang("pl");
+        applyI18n();
+    });
+
+    applyI18n();
+</script>
+<script>
+    const token = localStorage.getItem('studiosus_token');
+    const user = localStorage.getItem('studiosus_user');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const whoami = document.getElementById('whoami');
+
+    if (token && user) {
+        logoutBtn.style.display = 'inline-block';
+        const u = JSON.parse(user);
+        whoami.textContent = `Logged in as ${u.username} (${u.role})`;
+    }
+
+    logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('studiosus_token');
+        localStorage.removeItem('studiosus_user');
+        location.reload();
+    });
+</script>
+</html>

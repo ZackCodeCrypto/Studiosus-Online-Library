@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title data-i18n="loans">Loans</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav>
+    <a href="/" data-i18n="home">Home</a>
+    <div style="float:right;">
+        <button id="langEn">EN</button>
+        <button id="langPl">PL</button>
+    </div>
+</nav>
+<h1 data-i18n="loans">Loans</h1>
+
+<section class="card">
+    <h2 data-i18n="list">List</h2>
+    <button id="refreshBtn" data-i18n="refresh">Refresh</button>
+    <div class="pager">
+        <button id="prevBtn" data-i18n="prev">Prev</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn" data-i18n="next">Next</button>
+        <label>
+            <span data-i18n="limit">Limit</span>:
+            <select id="limitSel">
+                <option>5</option>
+                <option selected>10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+        </label>
+    </div>
+    <table id="loansTable">
+        <thead>
+        <tr>
+            <th data-i18n="id">ID</th>
+            <th data-i18n="user">User</th>
+            <th data-i18n="book">Book</th>
+            <th data-i18n="loanDate">Loan Date</th>
+            <th data-i18n="returnDate">Return Date</th>
+            <th data-i18n="actions">Actions</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<section class="card">
+    <h2 data-i18n="detailView">Detail View</h2>
+    <div id="detailBox" data-i18n="selectLoan">Select a loan…</div>
+</section>
+
+<section class="card">
+    <h2 data-i18n="add">Add</h2>
+    <form id="addForm">
+        <input name="user_id" placeholder="User ID" type="number" required data-i18n-placeholder="userId">
+        <input name="book_id" placeholder="Book ID" type="number" required data-i18n-placeholder="bookId">
+        <input name="loan_date" placeholder="Loan Date (YYYY-MM-DD)" required data-i18n-placeholder="loanDateInput">
+        <button type="submit" data-i18n="add">Add</button>
+        <div class="msg" id="addMsg"></div>
+    </form>
+</section>
+
+<section class="card">
+    <h2 data-i18n="update">Update</h2>
+    <form id="updateForm">
+        <input name="id" placeholder="Loan ID" type="number" required data-i18n-placeholder="loanId">
+        <input name="loan_date" placeholder="Loan Date (YYYY-MM-DD)" required data-i18n-placeholder="loanDateInput">
+        <input name="return_date" placeholder="Return Date (YYYY-MM-DD or blank)" data-i18n-placeholder="returnDateInput">
+        <button type="submit" data-i18n="update">Update</button>
+        <div class="msg" id="updateMsg"></div>
+    </form>
+</section>
+
+<section class="card">
+    <h2 data-i18n="delete">Delete</h2>
+    <form id="deleteForm">
+        <input name="id" placeholder="Loan ID" type="number" required data-i18n-placeholder="loanId">
+        <button type="submit" data-i18n="delete">Delete</button>
+        <div class="msg" id="deleteMsg"></div>
+    </form>
+</section>
+<script src="/js/api.js"></script>
+<script src="/js/i18n.js"></script>
+<script>
+    document.getElementById("langEn").addEventListener("click", () => {
+        setLang("en");
+        applyI18n();
+        loadLoans?.();
+        const d = document.getElementById("detailBox");
+        if (d) d.textContent = t("selectLoan");
+    });
+
+    document.getElementById("langPl").addEventListener("click", () => {
+        setLang("pl");
+        applyI18n();
+        loadLoans?.();
+        const d = document.getElementById("detailBox");
+        if (d) d.textContent = t("selectLoan");
+    });
+
+    applyI18n();
+</script>
+<script src="/js/loans.js"></script>
+</body>
+</html>
