@@ -1,13 +1,75 @@
 ﻿INSERT INTO users (username, password, role)
 VALUES
     ('Linda Gerry', 'lgerry123', 'admin'),
-    ('Alice Myersdale', 'password', 'user');
+    ('Alice Myersdale', 'password', 'user'),
+    ('Aiden Habibi', 'Password123!', 'user'),
+    ('Alexander Thomas', 'Password123!', 'user'),
+    ('James Dean', 'Password123!', 'user'),
+    ('Gregory Lutai', 'Password123!', 'user'),
+    ('Preston Smith', 'Password123!', 'user'),
+    ('Nathan Talbot', 'Password123!', 'user'),
+    ('Lidia Milewska', 'Password123!', 'user'),
+    ('Jack Wu', 'Password123!', 'user'),
+    ('Rhys Thomas', 'Password123!', 'user'),
+    ('Andrew Didona', 'Password123!', 'user'),
+    ('Mathew Miller', 'Password123!', 'user'),
+    ('Michael Kayne', 'Password123!', 'user');
+
 
 INSERT INTO books (title, author, year)
 VALUES
     ('1984', 'George Orwell', 1949),
-    ('The Hobbit', 'J.R.R. Tolkien', 1937);
+    ('The Hobbit', 'J.R.R. Tolkien', 1937),
+    ('On the Shortness of Life', 'Seneca', 49),
+    ('Letters from a Stoic', 'Seneca', 65),
+    ('The Consolation of Philosophy', 'Boethius', 524),
+    ('Summa Theologica', 'Thomas Aquinas', 1274),
+    ('Utopia', 'Thomas More', 1516),
+    ('The Prince', 'Niccolo Machiavelli', 1532),
+    ('Leviathan', 'Thomas Hobbes', 1651),
+    ('Discourse on Method', 'Rene Descartes', 1637),
+    ('Pensées', 'Blaise Pascal', 1670),
+    ('Essay Concerning Human Understanding', 'John Locke', 1689),
+    ('Critique of Pure Reason', 'Immanuel Kant', 1781),
+    ('Groundwork of the Metaphysics of Morals', 'Immanuel Kant', 1785),
+    ('Phenomenology of Spirit', 'G. W. F. Hegel', 1807),
+    ('The World as Will and Representation', 'Arthur Schopenhauer', 1818),
+    ('Thus Spoke Zarathustra', 'Friedrich Nietzsche', 1883),
+    ('Beyond Good and Evil', 'Friedrich Nietzsche', 1886),
+    ('Being and Nothingness', 'Jean-Paul Sartre', 1943),
+    ('The Stranger', 'Albert Camus', 1942),
+    ('The Myth of Sisyphus', 'Albert Camus', 1942),
+    ('The Name of the Rose', 'Umberto Eco', 1980),
+    ('The Road', 'Cormac McCarthy', 2006),
+    ('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 2011),
+    ('Homo Deus', 'Yuval Noah Harari', 2015),
+    ('The Silent Patient', 'Alex Michaelides', 2019),
+    ('The Midnight Library', 'Matt Haig', 2020);
 
 INSERT INTO loans (user_id, book_id, loan_date)
 VALUES
-    (2, 1, '2025-01-10');
+    (2, 1, '2025-01-10'),
+    (2, 5,  '2025-10-01', NULL),
+    (3, 6,  '2025-10-02', '2025-10-20'),
+    (4, 7,  '2025-10-03', NULL),
+    (5, 8,  '2025-10-04', NULL),
+    (6, 9,  '2025-10-05', '2025-11-01'),
+    (7, 10, '2025-10-06', NULL),
+    (8, 11, '2025-10-07', NULL),
+    (9, 12, '2025-10-08', '2025-10-30'),
+    (10,13, '2025-10-09', NULL),
+    (11,8, '2025-10-10', NULL),
+    (12,1, '2025-10-11', '2025-11-10'),
+    (13,11, '2025-10-12', NULL),
+    (11,8, '2025-10-13', NULL),
+    (5,10, '2025-10-14', '2025-11-05'),
+    (6,11, '2025-10-15', NULL),
+    (6,2, '2025-10-16', NULL),
+    (13,10, '2025-10-17', '2025-11-07'),
+    (7,12, '2025-10-18', NULL),
+    (2,6, '2025-10-19', NULL),
+    (4,4, '2025-10-20', '2025-11-15'),
+    (9,5, '2025-10-21', NULL),
+    (9,6, '2025-10-22', NULL),
+    (4,8, '2025-10-23', '2025-11-18'),
+    (5,7, '2025-10-24', NULL);
